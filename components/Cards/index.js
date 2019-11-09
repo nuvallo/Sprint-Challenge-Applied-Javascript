@@ -34,14 +34,17 @@ function newCard() {
       const author = document.createElement("div");
       const imgContainer = document.createElement("div");
       const image = document.createElement("img");
-      const span = document.createElement("span");
+      const by = document.createElement("span");
 
       // Classes
       card.classList.add("card");
       headline.classList.add("headline");
       author.classList.add("author");
       imgContainer.classList.add("img-container");
-      image.src = null;
+      image.src = content.authorPhoto;
+
+      headline.textContent = content.headline;
+      by.textContent = `By: ${content.authorName}`;
 
       // append
       cardsContainer.append(card);
@@ -49,7 +52,7 @@ function newCard() {
       card.append(author);
       author.append(imgContainer);
       imgContainer.append(image);
-      card.append(span);
+      author.append(by);
     });
   });
 }
