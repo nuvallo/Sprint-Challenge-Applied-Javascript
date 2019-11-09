@@ -17,3 +17,15 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+const carouselContainer = document.querySelector(".carousel-container");
+
+function newCarousel() {
+  const carousel = document.createElement("div");
+  const leftBtn = document.createElement("div");
+  const imageOne = document.createElement("img");
+  const imageTwo = document.createElement("img");
+  const imageThree = document.createElement("img");
+  const imageFour = document.createElement("img");
+  const rightBtn = document.createElement("div");
+}
