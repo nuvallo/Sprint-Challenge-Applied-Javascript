@@ -22,11 +22,15 @@ const promise = axios.get(
   "https://lambda-times-backend.herokuapp.com/articles"
 );
 
-const data = promise.then(response => {
+promise.then(response => {
   // Getting Data from API
   const newData = response.data;
-  const javascript = newData.articles.javascript;
-  const bootstrap = newData.articles.bootstrap;
+  const articles = [
+    newData.articles.javascript,
+    newData.articles.bootstrap,
+    newData.articles.jquery,
+    newData.articles.technology
+  ];
 
   function newCard(article) {
     // content
@@ -58,5 +62,8 @@ const data = promise.then(response => {
       author.append(by);
     });
   }
-  newCard(javascript);
+  newCard(articles[0]);
+  newCard(articles[1]);
+  newCard(articles[2]);
+  newCard(articles[3]);
 });
