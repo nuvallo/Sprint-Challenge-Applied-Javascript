@@ -17,3 +17,53 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+const carouselContainer = document.querySelector(".carousel-container");
+
+function newCarousel() {
+  // Elements
+  const carousel = document.createElement("div");
+  const leftBtn = document.createElement("div");
+  const imageOne = document.createElement("img");
+  const imageTwo = document.createElement("img");
+  const imageThree = document.createElement("img");
+  const imageFour = document.createElement("img");
+  const rightBtn = document.createElement("div");
+
+  // classes / attributes
+  carousel.classList.add("carousel");
+  leftBtn.classList.add("left-button");
+  rightBtn.classList.add("right-button");
+  imageOne.src = "./assets/carousel/mountains.jpeg";
+  imageTwo.src = "./assets/carousel/computer.jpeg";
+  imageThree.src = "./assets/carousel/trees.jpeg";
+  imageFour.src = "./assets/carousel/turntable.jpeg";
+  imageOne.style = "display: block";
+
+  // content
+  leftBtn.textContent = "<";
+  rightBtn.textContent = ">";
+
+  // functionality
+  leftBtn.addEventListener("click", () => {
+    imageOne.style = "display: none";
+    imageTwo.style = "display: block";
+    imageThree.style = "display: none";
+  });
+  rightBtn.addEventListener("click", () => {
+    imageOne.style = "display: none";
+    imageTwo.style = "display: none;";
+    imageThree.style = "display: block";
+  });
+
+  // append
+  carouselContainer.append(carousel);
+  carousel.append(leftBtn);
+  carousel.append(imageOne);
+  carousel.append(imageTwo);
+  carousel.append(imageThree);
+  carousel.append(imageFour);
+  carousel.append(rightBtn);
+}
+
+newCarousel();
