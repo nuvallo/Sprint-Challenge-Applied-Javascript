@@ -21,13 +21,16 @@ const cardsContainer = document.querySelector(".cards-container");
 const promise = axios.get(
   "https://lambda-times-backend.herokuapp.com/articles"
 );
-function newCard() {
-  const data = promise.then(response => {
-    // Getting Data from API
-    const newData = response.data;
-    console.log(newData);
+
+const data = promise.then(response => {
+  // Getting Data from API
+  const newData = response.data;
+  const javascript = newData.articles.javascript;
+  const bootstrap = newData.articles.bootstrap;
+
+  function newCard(article) {
     // content
-    const javascriptArticle = newData.articles.javascript.forEach(content => {
+    article.forEach(content => {
       // Creating elements
       const card = document.createElement("div");
       const headline = document.createElement("div");
@@ -54,7 +57,6 @@ function newCard() {
       imgContainer.append(image);
       author.append(by);
     });
-  });
-}
-
-newCard();
+  }
+  newCard(javascript);
+});
