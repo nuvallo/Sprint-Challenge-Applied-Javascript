@@ -26,4 +26,13 @@ function Header() {
   date.textContent = "SMARCH 28, 2019";
   heading.textContent = "Lambda Times";
   temp.textContent = "98";
+
+  // Append
+  headerContainer.append(header);
+  header.append(date);
+  header.append(heading);
+  header.append(temp);
+  return header;
 }
+
+Header();
