@@ -21,6 +21,7 @@
 const carouselContainer = document.querySelector(".carousel-container");
 
 function newCarousel() {
+  // Elements
   const carousel = document.createElement("div");
   const leftBtn = document.createElement("div");
   const imageOne = document.createElement("img");

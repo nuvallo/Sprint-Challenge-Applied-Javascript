@@ -19,6 +19,7 @@
 // Create a card for each of the articles and add the card to the DOM.
 
 const cardsContainer = document.querySelector(".cards-container");
+// "API"
 const promise = axios.get(
   "https://lambda-times-backend.herokuapp.com/articles"
 );
@@ -49,8 +50,9 @@ promise.then(response => {
       headline.classList.add("headline");
       author.classList.add("author");
       imgContainer.classList.add("img-container");
-      image.src = content.authorPhoto;
 
+      // Content
+      image.src = content.authorPhoto;
       headline.textContent = content.headline;
       by.textContent = `By: ${content.authorName}`;
 
