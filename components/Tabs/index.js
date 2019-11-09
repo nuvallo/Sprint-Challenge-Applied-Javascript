@@ -19,7 +19,17 @@ function newTopic() {
   const data = axiosPromises.then(response => {
     // getting data from link
     const newData = response.data.topics;
-    console.log(newData);
+    // iterate through the data
+    newData.forEach(topic => {
+      // Creating a new div for each topic
+      const tab = document.createElement("div");
+      // adding class
+      tab.classList.add("tab");
+      // Content
+      tab.textContent = topic;
+      // append
+      topics.append(tab);
+    });
   });
 }
 
