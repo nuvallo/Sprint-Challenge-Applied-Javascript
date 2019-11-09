@@ -14,3 +14,13 @@ const axiosPromises = axios.get(
 );
 
 const topics = document.querySelector(".topics");
+
+function newTopic() {
+  const data = axiosPromises.then(response => {
+    // getting data from link
+    const newData = response.data.topics;
+    console.log(newData);
+  });
+}
+
+newTopic();
